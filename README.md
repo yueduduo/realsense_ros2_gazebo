@@ -1,7 +1,8 @@
-# Intel RealSense Gazebo/ROS
-Intel Realsense Tracking and Depth camera simulations and URDF macros.
+# realsense_ros2_gazebo
 
+Intel RealSense Tracking and Depth cameras simulated models for Gazebo/ROS 2, with URDF macros.
 
+**Work in progress as of June 3, 2022.**
 
 ## RealSense T265 ##
 
