@@ -1,39 +1,37 @@
 <?xml version="1.0"?>
-<package format="2">
+<package format="1">
 
-  <name>realsense_ros_gazebo</name>
-  <version>1.2.0</version>
+  <name>realsense_ros2_gazebo</name>
+  <version>1.0.0</version>
 
-  <description>Intel Realsense Camera Simulations</description>
+  <description>Gazebo plugin for Intel RealSense cameras.</description>
 
-  <author email="sergey.dorodnicov@intel.com">Sergey Dorodnicov</author>
-  <author email="doron.hirshberg@intel.com">Doron Hirshberg</author>
-  <author email="marton@neorobot.hu">Marton Juhasz</author>
+  <license>GNU GPL v3.0</license>
 
-  <license>Apache 2.0</license>
+  <maintainer email="isl.torvergata@gmail.com">Intelligent Systems La</maintainer>
 
-  <maintainer email="marton@neorobot.hu">nilseuropa</maintainer>
+  <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <buildtool_depend>catkin</buildtool_depend>
-  <build_depend>gazebo_dev</build_depend>
-  <build_depend>message_generation</build_depend>
-
+  <depend>camera_info_manager</depend>
+  <depend>diagnostic_updater</depend>
+  <depend>gazebo_dev</depend>
   <depend>gazebo_msgs</depend>
+  <depend>gazebo_ros</depend>
   <depend>geometry_msgs</depend>
+  <depend>image_transport</depend>
+  <depend>rclcpp</depend>
+  <depend>rclcpp_components</depend>
   <depend>sensor_msgs</depend>
-  <depend>roscpp</depend>
-  <depend>nodelet</depend>
-  <depend>urdf</depend>
+  <depend>std_msgs</depend>
   <depend>tf</depend>
   <depend>tf2_ros</depend>
-  <depend>rosconsole</depend>
-  <depend>diagnostic_updater</depend>
-  <depend>std_msgs</depend>
-  <depend>gazebo_ros</depend>
-  <depend>image_transport</depend>
-  <depend>camera_info_manager</depend>
+  <depend>urdf</depend>
 
   <exec_depend>gazebo</exec_depend>
-  <exec_depend>message_runtime</exec_depend>
 
+  <export>
+    <build_type>ament_cmake</build_type>
+    <!--TODO Must be added!-->
+    <realsense_gazebo_plugin plugin="${prefix}/realsense_gazebo_plugin.xml"/>
+  </export>
 </package>
