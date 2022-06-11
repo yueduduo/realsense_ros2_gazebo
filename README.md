@@ -10,7 +10,7 @@ Intel RealSense Tracking and Depth cameras simulated models for Gazebo/ROS 2, wi
 
 ### Usage ###
 ```xml
-<xacro:include filename="$(find realsense_ros_gazebo)/xacro/tracker.xacro"/>
+<xacro:include filename="$(find realsense_ros2_gazebo)/xacro/tracker.xacro"/>
 
 <xacro:realsense_T265 sensor_name="camera" parent_link="base_link" rate="30.0">
   <origin rpy="0 0 0" xyz="0 0 0.5"/>
@@ -31,7 +31,7 @@ Intel RealSense Tracking and Depth cameras simulated models for Gazebo/ROS 2, wi
 
 ### Usage ###
 ```xml
-<xacro:include filename="$(find realsense_ros_gazebo)/xacro/depthcam.xacro"/>
+<xacro:include filename="$(find realsense_ros2_gazebo)/xacro/depthcam.xacro"/>
 
 <xacro:realsense_R200 sensor_name="camera" parent_link="base_link" rate="30.0">
   <origin rpy="0 0 0" xyz="0 0 0.5"/>
@@ -54,7 +54,7 @@ Intel RealSense Tracking and Depth cameras simulated models for Gazebo/ROS 2, wi
 ### Usage ###
 
 ```xml
-<xacro:include filename="$(find realsense_ros_gazebo)/xacro/depthcam.xacro"/>
+<xacro:include filename="$(find realsense_ros2_gazebo)/xacro/depthcam.xacro"/>
 
 <xacro:realsense_d435 sensor_name="d435" parent_link="base_link" rate="10">
   <origin rpy="0 0 0 " xyz="0 0 0.5"/>

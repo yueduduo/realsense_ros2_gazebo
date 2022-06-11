@@ -37,7 +37,7 @@
       <visual>
         <origin xyz="${d435_cam_mount_from_center_offset} ${-d435_cam_depth_py} 0" rpy="${pi/2} 0 ${pi/2}"/>
         <geometry>
-          <mesh filename="file://$(find realsense_ros2_gazebo)/meshes/realsense_d435.stl"/>
+          <mesh filename="package://realsense_ros2_gazebo/meshes/realsense_d435.stl" />
         </geometry>
       </visual>
       <collision>
@@ -247,7 +247,7 @@
 
   <!-- INTEL REALSENSE R200 -->
 
-  <!-- <xacro:macro name="realsense_R200" params="sensor_name parent_link rate *origin">
+  <xacro:macro name="realsense_R200" params="sensor_name parent_link rate *origin">
 
       <link name="${sensor_name}_R200_camera">
           <visual>
@@ -445,6 +445,6 @@
         </plugin>
       </gazebo>
 
-  </xacro:macro> -->
+  </xacro:macro>
 
 </robot>
