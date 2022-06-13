@@ -1,4 +1,4 @@
-#include "realsense_gazebo_plugin/gazebo_ros_realsense.hpp"
+#include "realsense_ros2_gazebo/realsense_ros2_gazebo.hpp"
 #include <sensor_msgs/fill_image.hpp>
 #include <sensor_msgs/point_cloud2_iterator.hpp>
 #include <sensor_msgs/point_cloud2_iterator.hpp>

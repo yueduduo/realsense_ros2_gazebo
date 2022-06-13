@@ -11,26 +11,26 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic -Wno-inconsistent-missing-override")
 endif()
 
-set(FastRTPS_INCLUDE_DIR /opt/ros/foxy/include) 
-set(FastRTPS_LIBRARY_RELEASE /opt/ros/foxy/lib/libfastrtps.so)
+set(FastRTPS_INCLUDE_DIR /opt/ros/galactic/include) 
+set(FastRTPS_LIBRARY_RELEASE /opt/ros/galactic/lib/libfastrtps.so)
 # Load catkin and all dependencies required for this package
 find_package(ament_cmake REQUIRED)
-find_package(rclcpp REQUIRED)
+find_package(camera_info_manager REQUIRED)
 find_package(gazebo_ros REQUIRED)
 find_package(image_transport REQUIRED)
-find_package(camera_info_manager REQUIRED)
+find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 
 find_package(gazebo REQUIRED)
 
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 
-set( dependencies
-    rclcpp
-    gazebo_ros
-    image_transport
-    camera_info_manager
-    sensor_msgs
+set(dependencies
+  camera_info_manager
+  gazebo_ros
+  image_transport
+  rclcpp
+  sensor_msgs
 )
 
 include_directories(
@@ -44,7 +44,7 @@ link_directories(${GAZEBO_LIBRARY_DIRS})
 add_library(
     ${PROJECT_NAME} SHARED
     src/RealSensePlugin.cpp
-    src/gazebo_ros_realsense.cpp
+    src/realsense_ros2_gazebo.cpp
     )
 
 ament_target_dependencies(${PROJECT_NAME} ${dependencies})
@@ -56,8 +56,8 @@ install(TARGETS ${PROJECT_NAME}
   RUNTIME DESTINATION bin
 )
 
-install(DIRECTORY include/
-  DESTINATION include/
+install(DIRECTORY include/${PROJECT_NAME}/
+  DESTINATION include/${PROJECT_NAME}
 )
 
 # Install models meshes

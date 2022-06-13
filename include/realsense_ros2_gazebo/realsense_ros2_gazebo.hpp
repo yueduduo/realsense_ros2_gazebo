@@ -1,7 +1,7 @@
 #ifndef _GAZEBO_ROS2_REALSENSE_PLUGIN_
 #define _GAZEBO_ROS2_REALSENSE_PLUGIN_
 
-#include "realsense_gazebo_plugin/RealSensePlugin.hpp"
+#include "realsense_ros2_gazebo/RealSensePlugin.hpp"
 
 #include <rclcpp/rclcpp.hpp>
 #include <sensor_msgs/msg/camera_info.hpp>
