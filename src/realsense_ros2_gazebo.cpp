@@ -4,15 +4,15 @@
 #include <sensor_msgs/point_cloud2_iterator.hpp>
 
 namespace {
+
 std::string extractCameraName(const std::string &name);
 sensor_msgs::msg::CameraInfo cameraInfo(const sensor_msgs::msg::Image & image, float horizontal_fov);
 }
 
 namespace gazebo {
-// Register the plugin
-GZ_REGISTER_MODEL_PLUGIN(GazeboRosRealsense)
 
-GazeboRosRealsense::GazeboRosRealsense() {}
+
+GazeboRosRealsense::GazeboRosRealsense() { this->node_ = std::make_shared<rclcpp::Node>("realsense_node_");  } // init it
 
 GazeboRosRealsense::~GazeboRosRealsense() {
   RCLCPP_DEBUG_STREAM(this->node_->get_logger(), "realsense_camera Unloaded");
@@ -241,6 +241,19 @@ void GazeboRosRealsense::OnNewDepthFrame() {
     this->pointcloud_pub_->publish(this->pointcloud_msg_);
   }
 }
+
+
+
+
+
+// Register the plugin
+GZ_REGISTER_MODEL_PLUGIN(GazeboRosRealsense)
+
+
+
+
+
+
 }
 
 namespace {

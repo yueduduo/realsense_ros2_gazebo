@@ -1,3 +1,9 @@
+# 说明
+本仓库修复了运行D435仿真插件时的 segment fault(段错误 (核心已转储)) bug. 
+通过gdb gzserver run 发现原作者在从ros1迁移到ros2后, 没有初始化node_节点指针导致了bug.
+
+2024/8/13
+
 # realsense_ros2_gazebo
 
 Intel RealSense Tracking and Depth cameras simulated models for Gazebo/ROS 2, with URDF macros.
